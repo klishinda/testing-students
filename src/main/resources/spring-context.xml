@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="scanStudent" class="scanner.ScanStudentImpl">
+    </bean>
+
+    <bean id="studentService" class="studentService.StudentServiceImpl">
+        <constructor-arg name="sc" ref="scanStudent"/>
+    </bean>
+
+    <bean id="questionService" class="questionService.QuestionServiceImpl">
+        <constructor-arg name="reader" ref="csvReader"/>
+    </bean>
+
+    <bean id="csvReader" class="dao.CsvReaderImpl">
+        <constructor-arg name="sc" ref="scanStudent"/>
+    </bean>
+
+</beans>
