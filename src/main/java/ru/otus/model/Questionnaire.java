@@ -1,4 +1,4 @@
-package model;
+package ru.otus.model;
 
 public class Questionnaire {
     private String question;
@@ -13,8 +13,8 @@ public class Questionnaire {
         return answer;
     }
 
-    public Questionnaire(String vQuestion, String vAnswer) {
-        this.question = vQuestion;
-        this.answer = vAnswer;
+    public Questionnaire(String question, String answer) {
+        this.question = question;
+        this.answer = answer;
     }
 }

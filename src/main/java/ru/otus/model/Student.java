@@ -1,4 +1,4 @@
-package model;
+package ru.otus.model;
 
 public class Student {
     private String surname;
@@ -13,8 +13,8 @@ public class Student {
         return name;
     }
 
-    public Student(String vSurname, String vName) {
-        this.surname = vSurname;
-        this.name = vName;
+    public Student(String surname, String name) {
+        this.surname = surname;
+        this.name = name;
     }
 }

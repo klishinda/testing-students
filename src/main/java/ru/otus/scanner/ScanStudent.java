@@ -1,8 +1,9 @@
-package scanner;
+package ru.otus.scanner;
 
-import model.Questionnaire;
-import model.Result;
-import model.Student;
+
+import ru.otus.model.Questionnaire;
+import ru.otus.model.Result;
+import ru.otus.model.Student;
 
 import java.util.ArrayList;
 

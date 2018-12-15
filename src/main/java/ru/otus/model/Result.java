@@ -1,12 +1,12 @@
-package model;
+package ru.otus.model;
 
 public class Result {
     private int correctAnswers;
     private int allQuestions;
 
-    public Result (int vCorrectAnswers, int vAllQuestions) {
-        this.correctAnswers = vCorrectAnswers;
-        this.allQuestions = vAllQuestions;
+    public Result (int correctAnswers, int allQuestions) {
+        this.correctAnswers = correctAnswers;
+        this.allQuestions = allQuestions;
     }
 
     public int getCorrectAnswers() { return correctAnswers;}
