@@ -1,9 +1,10 @@
 package ru.otus.localization;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.otus.exceptions.WrongInputsError;
-import ru.otus.model.Language;
+import ru.otus.messageManager.MessageManager;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -13,8 +14,11 @@ public class LocaleServiceImpl implements LocaleService {
     private static final int MAX_ERROR_ATTEMPTS = 3;
     private int errorCounts = 0;
 
+    @Autowired
+    private MessageManager messageManager;
+
     @Override
-    public Language setLocalization() throws WrongInputsError {
+    public void setLocalization() throws WrongInputsError {
         checkWrongAttempts();
 
         Scanner inputStream = new Scanner(System.in);
@@ -22,17 +26,16 @@ public class LocaleServiceImpl implements LocaleService {
         String lang = inputStream.nextLine();
 
         if (lang.equals("EN")) {
-            new Language(Locale.ENGLISH);
+            messageManager.setLocale(Locale.ENGLISH);
         }
         else if (lang.equals("RU")) {
-            new Language(new Locale("ru"));
+            messageManager.setLocale(new Locale("ru"));
         }
         else {
             System.out.println("Your input is wrong, please try again.");
             errorCounts++;
             setLocalization();
         }
-        return null;
     }
 
     private void checkWrongAttempts() throws WrongInputsError {

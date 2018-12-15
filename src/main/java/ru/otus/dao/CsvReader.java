@@ -1,8 +1,10 @@
 package ru.otus.dao;
 
 import ru.otus.exceptions.CsvReaderException;
-import ru.otus.model.Result;
+import ru.otus.model.Questionnaire;
+
+import java.util.ArrayList;
 
 public interface CsvReader {
-    Result start() throws CsvReaderException;
+    ArrayList<Questionnaire> readCsv() throws CsvReaderException;
 }
