@@ -1,8 +1,10 @@
-package studentService;
+package ru.otus.studentService;
 
-import model.Student;
-import scanner.ScanStudent;
+import org.springframework.stereotype.Service;
+import ru.otus.model.Student;
+import ru.otus.scanner.ScanStudent;
 
+@Service
 public class StudentServiceImpl implements StudentService {
     private ScanStudent sc;
 

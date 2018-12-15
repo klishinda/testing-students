@@ -1,6 +1,6 @@
-package studentService;
+package ru.otus.studentService;
 
-import model.Student;
+import ru.otus.model.Student;
 
 public interface StudentService {
     Student getCurrentStudent();
